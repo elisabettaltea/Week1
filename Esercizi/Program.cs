@@ -25,15 +25,19 @@ namespace Esercizi
                 {
                     case 1:
                         result = firstNumber + secondNumber;
+                        Console.WriteLine($"{result}");
                         break;
                     case 2:
                         result = firstNumber - secondNumber;
+                        Console.WriteLine($"{result}");
                         break;
                     case 3:
                         result = firstNumber * secondNumber;
+                        Console.WriteLine($"{result}");
                         break;
                     case 4:
                         result = firstNumber / secondNumber;
+                        Console.WriteLine($"{result}");
                         break;
                 }
 
@@ -46,19 +50,19 @@ namespace Esercizi
             //Esercizio2
             int cont = 0;
             string s = "mattinata";
-            char l = 'a';
+            char let = 'a';
 
             for (int index = 0; index < s.Length; index++)
             {
-                if (s[index] == l)
+                if (s[index] == let)
                 {
                     ++cont;
                 }
             }
-            Console.WriteLine($"La lettera {l} compare {cont} volte nella stringa \"mattinata\"!");
+            Console.WriteLine($"La lettera {let} compare {cont} volte nella stringa \"mattinata\"!");
 
             //Esercizio3
-            int[] arrayOrd = new int[5];
+            //int[] arrayOrd = new int[5];
             int[] array = { 3, 6, 2, 7, 8 };
 
             for (int ind = 0; ind < array.Length; ind++)
@@ -69,26 +73,88 @@ namespace Esercizi
             //Console.WriteLine($"L'elemento in posizione 1 è {array[0]}");
             //Console.WriteLine($"L'elemento in posizione 3 è {array[2]}");
 
-            for (int i=1; i<5; i++)
+            //int t = 0;
+            //for (int i = 1; i < 5; i++)
+            //{
+            //    for (int j = 3; j >= i; j--)
+            //    {
+            //        if (array[j - 1] > array[j]) //(array[j-1]<array[j])
+            //        {
+            //            //arrayOrd[j - 1] = array[j - 1];
+            //            //arrayOrd[j] = array[j];
+
+            //            t = array[j - 1];
+            //            array[j - 1] = array[j];
+            //            array[j] = array[j - 1];
+            //        }
+            //        //else
+            //        //{
+            //        //    arrayOrd[j - 1] = array[j];
+            //        //    arrayOrd[j] = array[j - 1];
+            //    }
+            //}
+
+            int l = array.Length;
+            for (int i = 0; i < l - 1; i++)
             {
-                for (int j=1; j<=i; j++)
-                    if (array[j-1]<array[j])
+
+                for (int j = 0; j < l - i - 1; j++)
+                {
+                    if (array[j] > array[j + 1])
                     {
-                        arrayOrd[j-1] = array[j-1];
-                        arrayOrd[j] = array[j];
+                        int tmp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = tmp;
                     }
-                    else
-                    {
-                        arrayOrd[j-1] = array[j];
-                        arrayOrd[j] = array[j-1];
-                    }
+                }
+            }
+            for (int ind = 0; ind < l; ind++)
+            {
+                Console.WriteLine(array[ind]);
             }
 
-            for (int ind = 0; ind < arrayOrd.Length; ind++)
+            //Esercizio4
+            //string str = "innamorati";
+            //int lung = str.Length;
+            //int[] arrayCont = new int[lung];
+
+            //for (int index = 0; index < lung ; index++)
+            //{
+            //    cont = 0;
+            //    for (int jnd = 0; jnd < l - index - 1; jnd++)
+            //    if (str[index] == str[jnd])
+            //    {
+            //        cont++;
+            //    }
+            //}
+            //Console.WriteLine($"La lettera {let} compare {cont} volte nella stringa \"mattinata\"!");
+            
+            string str = "mattinata";
+            int lung = str.Length;
+            
+            for (int jndex = 0; jndex < lung; jndex++)
             {
-                Console.WriteLine(arrayOrd[ind]);
+                cont = 0;
+                for (int index = 0; index < lung - jndex - 1; index++)
+                {
+                    if (s[index] != s[jndex])
+                    {
+                        ++cont;
+                    }
+                }
+                if (cont == 0)
+                {
+                    Console.WriteLine($"La lettera cercata è {cont}");
+                }
+
             }
+            Console.WriteLine($"La lettera {let} compare {cont} volte nella stringa \"mattinata\"!");
+
+
 
         }
     }
+
 }
+
+
