@@ -8,28 +8,6 @@ namespace Esercizi4e5
         {
 
             //Esercizio4
-            int[] array = { 3, 6, 2, 7, 8 };
-            int l = array.Length;
-
-            for (int i = 0; i < l - 1; i++)
-            {
-                for (int j = 0; j < l - i - 1; j++)
-                {
-                    if (array[j] > array[j + 1])
-                    {
-                        int tmp = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = tmp;
-                    }
-                }
-            }
-
-            for (int ind = 0; ind < l; ind++)
-            {
-                Console.WriteLine(array[ind]);
-            }
-
-            //Esercizio5
             //string p = "mozzarella";
             string p = "sottilissimo";
             int lu = p.Length;
@@ -54,6 +32,29 @@ namespace Esercizi4e5
                     Console.WriteLine($"La prima lettera che non si ripete è {p[index]}!");
                     break;
                 }
+            }
+
+
+            //Esercizio5
+            int[] array = { 3, 6, 2, 7, 8 };
+            int l = array.Length;
+
+            for (int i = 0; i < l - 1; i++)
+            {
+                for (int j = 0; j < l - i - 1; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        int tmp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = tmp;
+                    }
+                }
+            }
+
+            for (int ind = 0; ind < l; ind++)
+            {
+                Console.WriteLine(array[ind]);
             }
 
         }
