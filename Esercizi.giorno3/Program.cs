@@ -80,49 +80,67 @@ namespace Esercizi.giorno3
 
 
 
-            //Esercizio2
+            ////Esercizio2
 
-            //Scrivere una routine che, dati due array, verifichi quali sono gli elementi in comune,
-            //ovvero presenti in entrambi gli array, e stampare solo gli elementi in comune. 
+            ////Scrivere una routine che, dati due array, verifichi quali sono gli elementi in comune,
+            ////ovvero presenti in entrambi gli array, e stampare solo gli elementi in comune. 
+            ////Se non ci sono elementi in comune, stampare 'Non ci sono elementi in comune'.
+
+            //int[] a1 = { 1, 2, 3 };
+
+            ////int[] b1 = { 4, 7, 9 };
+            //int[] b1 = { 4, 2, 9 };
+            ////int[] b1 = { 4, 2, 1 };
+
+            //cerca(a1, b1);
+
+            //void cerca(int[] a, int[] b)
+            //{
+            //    ArrayList inComune = new ArrayList() { };
+
+            //    for (int i = 0; i < a.Length; i++)
+            //    {
+            //        for (int j = 0; j < b.Length; j++)
+            //        {
+            //            if (a[i] == b[j])
+            //            {
+            //                inComune.Add(a[i]);
+            //            }
+
+            //        }
+            //    }
+
+            //    if (inComune.Count > 0)
+            //    {
+            //        Console.WriteLine("Gli elementi in comune fra i due vettori sono:");
+            //        foreach (int i in inComune)
+            //        {
+            //            Console.Write($"{i} ");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.Write("I due vettori non hanno elementi in comune!");
+            //    }
+            //}
+
+            //Dati due array della stessa dimensione N,
+            //verificare quali sono gli elementi in comune,
+            //ovvero presenti in entrambi gli array, e stampare solo gli elementi in comune.
             //Se non ci sono elementi in comune, stampare 'Non ci sono elementi in comune'.
-
-            int[] a1 = { 1, 2, 3 };
-
-            //int[] b1 = { 4, 7, 9 };
-            int[] b1 = { 4, 2, 9 };
-            //int[] b1 = { 4, 2, 1 };
-
-            cerca(a1, b1);
-
-            void cerca(int[] a, int[] b)
-            {
-                ArrayList inComune = new ArrayList() { };
-
-                for (int i = 0; i < a.Length; i++)
-                {
-                    for (int j = 0; j < b.Length; j++)
-                    {
-                        if (a[i] == b[j])
-                        {
-                            inComune.Add(a[i]);
-                        }
-
-                    }
-                }
-
-                if (inComune.Count > 0)
-                {
-                    Console.WriteLine("Gli elementi in comune fra i due vettori sono:");
-                    foreach (int i in inComune)
-                    {
-                        Console.Write($"{i} ");
-                    }
-                }
-                else
-                {
-                    Console.Write("I due vettori non hanno elementi in comune!");
-                }
-            }
+            //N.B.I due array contengono numeri interi maggiori di 0 e tutti diversi tra loro.
+            //Es.array1 = { 1,2,4}, array2 = { 1,2,3}
+            //            --> output 1,2
+            //Es. array1 = {1,3,5,2}, array2 = {6,7,8} --> output Non ci sono elementi in comune
+            //Possibili alternative:
+            //Chiedo all'utente di inserire i primi N numeri e li salvo nell'array 1
+            //Chiedo all'utente di inserire altri N numberi e li salvo nell'array 2
+            //
+            //Note:
+            //Controllo che l'utente inserisca un intero, che non inserisca due volte lo stesso numero
+            //e che sia maggiore di 0
+            //oppure suppongo che l'utente sia gentile e inserisca tutti numeri interi diversi tra loro e
+            //maggiori di 0
 
 
 
@@ -130,6 +148,53 @@ namespace Esercizi.giorno3
             //Scrivere una routine che chiede all'utente di scrivere i giorni della settimana (Es. Lun Mar Mer Gio Ven Sab Dom).
             //Se l'utente ha già inserito un giorno, stampare 'Hai già inserito questo giorno' e far inserire  nuovo.
             //Infine, stampare i giorni nell'ordine in cui l'utente li ha inseriti. 
+
+
+            //string[] weerkOrdinata = { "lun", "mar", "mer", "gio", "ven", "sab", "dom" };
+
+            string[] Settimana = creaWeek();
+
+            Console.WriteLine("Hai creato il vettore:");
+            foreach(string i in Settimana)
+            {
+                Console.Write($"{i} ");
+            }
+
+            string[] creaWeek()
+            {
+
+                string[] week = new string[7];
+
+                for (int i = 0; i < week.Length; i++)
+                {
+                    Console.WriteLine($"Inserisci il {i+1}° giorno della settimana " +
+                        "(per favore, usa solo il formato lun, mar, mer, gio, ven, sab, dom, mi fido di te!)");
+                    //Inserire controllo su formato e stringhe
+
+                    //string[] giorno = CheckDay();
+                    string day = Console.ReadLine();
+
+                    int found = -1;
+
+                    found = Array.IndexOf(week, day);
+
+                    if (found > -1)
+                    {
+                        Console.WriteLine("Giorno già presente nell'array!");
+                        i--;
+                    }
+                    else
+                    {
+                        week[i] = day;
+                    }
+                }
+
+                return week;
+            }
+
+            //string[] CheckDay();
+
+
         }
     }
 }

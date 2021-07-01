@@ -25,7 +25,7 @@ namespace Esercizi.giorno4
 
                 verificaVittoria(number, sum);
 
-                Console.WriteLine("Vuoi continuare? s per si");
+                Console.WriteLine("Vuoi continuare? s per si, altrimenti un tasto qualunque.");
                 
             }
             while (Console.ReadKey().KeyChar == 's');
