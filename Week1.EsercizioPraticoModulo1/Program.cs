@@ -6,7 +6,6 @@ namespace Week1.EsercizioPraticoModulo1
     {
         static void Main(string[] args)
         {
-            //{}
             Console.WriteLine("Benvenuto a Tombola!");
 
             do
@@ -133,7 +132,7 @@ namespace Week1.EsercizioPraticoModulo1
                 return numbers;
             }
 
-            //Funzione per il controllo della vittoria
+            //Procedura per il controllo della vittoria 
             void CheckWin(int[] chosen, int[] drawn)
             {
                 //ricerca dei numeri in comune tra quelli scelti dal giocatore e quelli estratti
@@ -197,7 +196,7 @@ namespace Week1.EsercizioPraticoModulo1
                 ////se vengono estratti 3 numeri scelti dal giocatore si fa terna e ambo,
                 ////se vengono estratti 4 numeri scelti dal giocatore si fa quaterna, terna e ambo,
                 ////se vengono estratti tra i 5 e i 14 numeri scelti dal giocatore si fa cinquina, quaterna, terna e ambo,
-                ////se vengono estratti tutti i 15 numeri scelti dal giocatore si fa tombola!
+                ////se vengono estratti tutti i 15 numeri scelti dal giocatore si fa tombola!)
                 //if (count < 2)
                 //{
                 //    Console.WriteLine("Hai perso!");
